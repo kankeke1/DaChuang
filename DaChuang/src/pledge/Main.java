@@ -41,20 +41,29 @@ public class Main {
             if (args.length == 0) {
                 new GUI();
             } else {
+                //定义命令行的各种东西
                 CommandLineParser parser = new CommandLineParser(args, "PLEDGE");
                 try {
-                    
+                    //根据预定义的参数配置解析参数
                     parser.parseArgs();
+
+                    //检查当前解析的命令是否是 "generate_products"
                     if (parser.getCommandName().equals(CommandLineParser.GENERATE)) {
+
                         ModelPLEDGE model = new ModelPLEDGE();
+                        //检测特征模型是否为 DIMACS 格式,从而调用不同的方法
                         if (parser.getCommandGenerate().dimacs) {
                             model.loadFeatureModel(parser.getCommandGenerate().fmFile, model.getFeatureModelFormat().DIMACS);
                         } else {
                             model.loadFeatureModel(parser.getCommandGenerate().fmFile, model.getFeatureModelFormat().SPLOT);
                         }
+
+                        //设置数量时间
                         model.setNbProductsToGenerate(parser.getCommandGenerate().nbProds);
                         model.setGenerationTimeMSAllowed(parser.getCommandGenerate().timeAllowed);
+                        //生成产品
                         model.generateProducts();
+                        //保存产品到输出路径
                         model.saveProducts(parser.getCommandGenerate().outputFile);
                     }
                 } catch (Exception e) {

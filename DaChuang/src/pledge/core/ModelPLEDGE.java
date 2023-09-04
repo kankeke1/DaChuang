@@ -119,19 +119,28 @@ public class ModelPLEDGE extends Observable {
      * Creates the model of the application.
      */
     public ModelPLEDGE() {
+        //求解器
         solver = null;
         solverIterator = null;
+        //存储特征的整数标识和名称的列表
         featuresIntList = new ArrayList<Integer>();
         featuresList = new ArrayList<String>();
+        //于将特征名称映射到整数标识的哈希映射
         namesToFeaturesInt = new HashMap<String, Integer>();
+        //这两个属性是用于存储特征模型约束的列表，后者是string形式
         featureModelConstraints = new ArrayList<String>();
         featureModelConstraintsString = new ArrayList<String>();
+        //存储核心特征和无效特征的列表
         coreFeatures = new ArrayList<String>();
         deadFeatures = new ArrayList<String>();
+        //一个用于存储生成的产品的对象
         products = null;
+        //是否为运行状态，是否为不确定状态
         running = false;
         indeterminate = true;
+        //进度初始为0
         progress = 0;
+        //这两个属性分别用于存储生成产品和优化产品顺序的技术
         generationTechniques = new ArrayList<GenerationTechnique>();
         generationTechniques.add(new EvolutionaryAlgorithm1Plus1());
         generationTechnique = generationTechniques.get(0);
@@ -445,17 +454,33 @@ public class ModelPLEDGE extends Observable {
      * @param format the format of the feature model.
      * @throws Exception if the file format is incorrect.
      */
+    //FeatureModelFormat format特征模型模式：dimacs/spolot
     public void loadFeatureModel(String filePath, FeatureModelFormat format) throws Exception {
+        //设置为正在运行的状态
         setRunning(true);
         setIndeterminate(true);
+        //这两行代码设置全局操作和当前操作的状态，用于跟踪加载特征模型的进度。
         setGlobalAction(GLOBAL_ACTION_LOAD_FM);
         setCurrentAction(CURRENT_ACTION_LOAD_CONSTRAINTS);
+        //将特征模型的格式设置为传入的 format 参数值。
         featureModelFormat = format;
         clean();
+        //从特征模型文件路径中提取特征模型的名称，并存储在 featureModelName 变量中。
         featureModelName = new File(filePath).getName();
         featureModelName = featureModelName.substring(0, featureModelName.lastIndexOf("."));
+        //将产品对象设置为 null，表示尚未生成产品
         products = null;
         fmPath = filePath;
+/**
+ switch (format)：这是一个 switch 语句，根据特征模型的格式执行不同的操作。
+对于 SPLOT 格式的特征模型：
+创建一个 XMLFeatureModel 对象，用于加载特征模型文件。
+初始化一个 SAT 推理器 (ReasoningWithSAT)，使用加载的特征模型。
+从 SAT 推理器获取特征列表，将特征名称和整数标识添加到相应的列表中。
+对于 DIMACS 格式的特征模型：
+创建 DIMACS 求解器对象，并解析 DIMACS 文件。
+从 DIMACS 文件中提取特征名称和整数标识，并添加到相应的列表中。
+* */
         switch (format) {
 
             case SPLOT:
@@ -500,9 +525,13 @@ public class ModelPLEDGE extends Observable {
                 break;
         }
 
+        //设置当前操作为提取特征，并将不确定状态设置为 false。
         setCurrentAction(CURRENT_ACTION_EXTRACT_FEATURES);
         setIndeterminate(false);
+        //进度条
         setProgress(0);
+        //如果存在求解器 (solver != null)，则设置求解器的超时时间和变量排序。
+        //创建求解器迭代器对象 (solverIterator)，用于迭代解空间中的模型。
         int n = 1;
         int featuresCount = featuresIntList.size();
         while (n <= featuresCount) {
@@ -520,6 +549,7 @@ public class ModelPLEDGE extends Observable {
         solverIterator = new ModelIterator(solver);
         solverIterator.setTimeoutMs(ITERATOR_TIMEOUT);
 
+        /*设置进度条以报告约束提取的进度。和设置进度条，用于查找核心特征和无效特征。*/
 
         setCurrentAction(CURRENT_ACTION_EXTRACT_CONSTRAINTS);
         setProgress(0);
@@ -625,37 +655,15 @@ public class ModelPLEDGE extends Observable {
         }
 
 
-//        for (int i = 0; i < nConstraints; i++) {
-//            IConstr constraint = solver.getIthConstr(i);
-//            if (constraint != null) {
-//                featureModelConstraints.add(constraint);
-//                StringBuilder stringConstraint = new StringBuilder();
-//                int size = constraint.size();
-//                for (int j = 0; j < size; j++) {
-//                    boolean negative;
-//                    int literal = constraint.get(j) / 2;
-//                    negative = constraint.get(j) % 2 == 1;
-//                    String feature = featuresList.get(literal - 1);
-//                    if (negative) {
-//                        stringConstraint.append(NOT);
-//                    }
-//                    stringConstraint.append(feature);
-//                    if (j < size - 1) {
-//                        stringConstraint.append(OR);
-//                    }
-//                    
-//                }
-//                featureModelConstraintsString.add(stringConstraint.toString());
-//            }
-//            
-//            setProgress((int) ((i + 1) / (double) nConstraints * 100));
-//        }
-
         setCurrentAction(CURRENT_ACTION_FINDING_CORE_DEAD_FEATURES);
         setProgress(0);
         n = 0;
         IVecInt vector = new VecInt();
         // Core and dead features
+        //遍历特征列表，对每个特征执行以下操作：
+        //创建一个变量数组，用于表示是否存在满足条件的模型。
+        //如果该特征的否定形式不满足条件，将其添加到核心特征列表。
+        //如果该特征的肯定形式不满足条件，将其添加到无效特征列表。
         for (String feature : featuresList) {
             int f = namesToFeaturesInt.get(feature);
             vector.clear();
@@ -672,7 +680,9 @@ public class ModelPLEDGE extends Observable {
             n++;
             setProgress((int) ((n) / (double) featuresCount * 100));
         }
-
+//设置运行状态为 false，表示加载特征模型的过程已完成。
+//
+//通知观察者（可能是 UI 组件）特征模型的约束信息已准备好。
         setRunning(false);
         setChanged();
         notifyObservers(featureModelConstraints);
