@@ -20,11 +20,7 @@
  */
 package com.example.dachuang.core;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -501,12 +497,29 @@ public class ModelPLEDGE extends Observable {
 
                 break;
             case DIMACS:
-                ISolver dimacsSolver = SolverFactory.instance().createSolverByName(solverName);
+                //原代码
+//                ISolver dimacsSolver = SolverFactory.instance().createSolverByName(solverName);
+//                DimacsReader dr = new DimacsReader(dimacsSolver);
+//                dr.parseInstance(new FileReader(filePath));
+//                solver = (Solver) dimacsSolver;
+//                BufferedReader in = new BufferedReader(new FileReader(filePath));
+//                String line;
+                //gpt代码
+                ISolver dimacsSolver = SolverFactory.newDefault(); // 创建一个MiniSAT求解器
                 DimacsReader dr = new DimacsReader(dimacsSolver);
-                dr.parseInstance(new FileReader(filePath));
+                InputStream inputStream = new FileInputStream(filePath); // 使用InputStream来读取DIMACS文件
+                dr.parseInstance(inputStream); // 使用parseInstance方法解析DIMACS文件
                 solver = (Solver) dimacsSolver;
-                BufferedReader in = new BufferedReader(new FileReader(filePath));
+
+                //old
+//                BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+//                String line;
+                //gpt
+                InputStream copyInputStream = new FileInputStream(filePath);
+                BufferedReader in = new BufferedReader(new InputStreamReader(copyInputStream));
                 String line;
+
+
                 int n = 0;
                 while ((line = in.readLine()) != null && line.startsWith("c")) {
                     StringTokenizer st = new StringTokenizer(line.trim(), " ");
@@ -523,6 +536,7 @@ public class ModelPLEDGE extends Observable {
                     namesToFeaturesInt.put(featureName, feature);
                 }
                 in.close();
+                copyInputStream.close();
                 break;
         }
 
