@@ -45,13 +45,15 @@ public class EvolutionaryAlgorithm1Plus1 implements GenerationTechnique {
      * @return a list containing the generated products.
      * @throws Exception if a problem occurs during the generation.
      */
+    //传入特征模型，数量时间，优化技术
     @Override
     public List<Product> generateProducts(ModelPLEDGE model, int nbProducts, long timeAllowed, PrioritizationTechnique prioritizationTechnique) throws Exception {
         long startTimeMS = System.currentTimeMillis();
+        //?
         Individual indiv = new Individual(model, model.getUnpredictableProducts(nbProducts), prioritizationTechnique);
         indiv.fitnessAndOrdering();
         int nbIter = 0;
-
+        //检查当前时间与开始时间之间是否小于给定的时间限制
         while (System.currentTimeMillis() - startTimeMS < timeAllowed) {
             model.setCurrentAction("Iteration number " + (nbIter + 1));
             Individual newIndiv = new Individual(model, indiv, prioritizationTechnique);
@@ -63,6 +65,7 @@ public class EvolutionaryAlgorithm1Plus1 implements GenerationTechnique {
             nbIter++;
             model.setProgress((int) ((System.currentTimeMillis() - startTimeMS) / (double) timeAllowed * 100.0));
         }
+        //方法返回生成的产品列表，这些产品包含在个体indiv中。
         return indiv.getProducts();
     }
 
