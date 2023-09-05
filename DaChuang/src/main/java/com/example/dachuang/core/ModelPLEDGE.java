@@ -20,14 +20,45 @@
  */
 package com.example.dachuang.core;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Observable;
+import java.util.Set;
+import java.util.StringTokenizer;
 
 import com.example.dachuang.core.techniques.generation.EvolutionaryAlgorithm1Plus1;
 import com.example.dachuang.core.techniques.generation.GenerationTechnique;
 import com.example.dachuang.core.techniques.prioritization.PrioritizationTechnique;
 import com.example.dachuang.core.techniques.prioritization.SimilarityGreedy;
 import com.example.dachuang.core.techniques.prioritization.SimilarityNearOptimal;
-
-import java.util.*;
+import org.sat4j.core.VecInt;
+import org.sat4j.minisat.SolverFactory;
+import org.sat4j.minisat.core.IOrder;
+import org.sat4j.minisat.core.Solver;
+import org.sat4j.minisat.orders.RandomLiteralSelectionStrategy;
+import org.sat4j.minisat.orders.RandomWalkDecorator;
+import org.sat4j.minisat.orders.VarOrderHeap;
+import org.sat4j.reader.DimacsReader;
+import org.sat4j.specs.IConstr;
+import org.sat4j.specs.ISolver;
+import org.sat4j.specs.IVecInt;
+import org.sat4j.specs.TimeoutException;
+import org.sat4j.tools.ModelIterator;
+import splar.core.constraints.CNFClause;
+import splar.core.constraints.CNFFormula;
+import splar.core.fm.FeatureModel;
+import splar.core.fm.XMLFeatureModel;
+import splar.plugins.reasoners.sat.sat4j.FMReasoningWithSAT;
+import splar.plugins.reasoners.sat.sat4j.ReasoningWithSAT;
 
 /**
  * This class represents the model of the application. It contains the methods 
@@ -698,7 +729,7 @@ public class ModelPLEDGE extends Observable {
      * Compute the valid pairs of the FM.
     
      */
-    private Set<TSet> computeValidPairs() throws TimeoutException {
+    private Set<TSet> computeValidPairs() throws TimeoutException, java.util.concurrent.TimeoutException {
         Set<TSet> pairs = new HashSet<TSet>();
 
         List<Integer> extendedFeatures = new ArrayList<Integer>(featuresIntList.size() * 2);
@@ -719,7 +750,7 @@ public class ModelPLEDGE extends Observable {
      * Compute the pairwise coverage of the products.
      * @return the pairwise coverage of the products.
      */
-    public String getPairwiseCoverage() throws TimeoutException {
+    public String getPairwiseCoverage() throws TimeoutException, java.util.concurrent.TimeoutException {
         setRunning(true);
         setIndeterminate(false);
         setGlobalAction(GLOBAL_ACTION_COVERAGE);

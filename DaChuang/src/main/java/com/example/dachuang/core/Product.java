@@ -49,7 +49,7 @@ public class Product extends HashSet<Integer> implements Serializable {
         coverage = 0;
     }
 
-    public Set<TSet> getCoveredPairs() throws TimeoutException {
+    public Set<TSet> getCoveredPairs() throws TimeoutException, org.sat4j.specs.TimeoutException {
 
         List<Integer> pl = new ArrayList<Integer>(this);
         int size = size();

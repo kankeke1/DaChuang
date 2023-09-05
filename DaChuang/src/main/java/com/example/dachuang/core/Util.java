@@ -25,6 +25,10 @@ package com.example.dachuang.core;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeoutException;
+import org.sat4j.core.VecInt;
+import org.sat4j.minisat.core.Solver;
+import org.sat4j.specs.IVecInt;
+
 
 /**
  *
@@ -32,12 +36,12 @@ import java.util.concurrent.TimeoutException;
  */
 public class Util {
     
-    public static void nCk(int n, int k, Set<TSet> tsets, List<Integer> featuresList, boolean checkValid, Solver solver) throws TimeoutException {
+    public static void nCk(int n, int k, Set<TSet> tsets, List<Integer> featuresList, boolean checkValid, Solver solver) throws TimeoutException, org.sat4j.specs.TimeoutException {
         int[] a = new int[k];
         nCkH(n, k, 0, a, k, tsets, featuresList, checkValid, solver);
     }
     
-    public static void nCkH(int n, int loopno, int ini, int[] a, int k, Set<TSet> tsets, List<Integer> featuresList, boolean checkValid, Solver solver) throws TimeoutException {
+    public static void nCkH(int n, int loopno, int ini, int[] a, int k, Set<TSet> tsets, List<Integer> featuresList, boolean checkValid, Solver solver) throws TimeoutException, org.sat4j.specs.TimeoutException {
         
         if (k == 0) {
             return;
