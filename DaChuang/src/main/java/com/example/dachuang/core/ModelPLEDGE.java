@@ -481,6 +481,7 @@ public class ModelPLEDGE extends Observable {
         switch (format) {
 
             case SPLOT:
+                //sat版本旧，读文件流错误
                 FeatureModel fm = new XMLFeatureModel(filePath, XMLFeatureModel.USE_VARIABLE_NAME_AS_ID);
                 fm.loadModel();
                 ReasoningWithSAT reasonerSAT = new FMReasoningWithSAT(solverName, fm, SAT_TIMEOUT);
