@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.3</version>
+		<version>2.3.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -14,7 +14,11 @@
 	<name>DaChuang</name>
 	<description>DaChuang</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>8</java.version>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -86,6 +90,14 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>7</source>
+					<target>7</target>
 				</configuration>
 			</plugin>
 		</plugins>
