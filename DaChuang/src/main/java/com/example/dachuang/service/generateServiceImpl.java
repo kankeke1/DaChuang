@@ -59,8 +59,9 @@ public class generateServiceImpl implements generateService{
 }
 
 @Override
-    public void generateProduct() throws Exception {
+    public String generateProduct() throws Exception {
     model.generateProducts();
+    return outPath;
 }
 
 @Override

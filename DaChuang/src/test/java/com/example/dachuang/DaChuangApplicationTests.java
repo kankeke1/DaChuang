@@ -36,7 +36,7 @@ class DaChuangApplicationTests {
 		generate.loadFeatureModel(multipartFile);
 		generate.setTimeNum(20,200);
 		generate.generateProduct();
-		generate.downLoadProduct();
+//		generate.downLoadProduct();
 
 
 	}

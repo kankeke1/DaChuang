@@ -19,7 +19,7 @@ public interface generateService {
     public void setTimeNum(int num,long time) ;
 
     //生产产品
-    public void generateProduct() throws Exception;
+    public String generateProduct() throws Exception;
     //把结果呈现出来
     public void showProduct();
     //给用户下载结果
