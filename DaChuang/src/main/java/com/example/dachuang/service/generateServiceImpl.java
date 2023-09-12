@@ -5,10 +5,13 @@ import com.example.dachuang.core.ModelPLEDGE;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * @author mmy
@@ -24,9 +27,30 @@ public class generateServiceImpl implements generateService{
 
 @Override
     public void loadFeatureModel(MultipartFile file) throws Exception {
+    // 获取当前时间
+    LocalDateTime currentTime = LocalDateTime.now();
+    // 定义日期时间格式
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss");
+    // 将日期时间对象转换为字符串
+    String currentTimeStr = currentTime.format(formatter);
+
+
     // 获取Spring Boot项目的根目录路径
-    Path = System.getProperty("user.dir")+"\\rubbish"; // 获取当前工作目录，通常是项目根目录
-    outPath=Path+"\\out.txt";
+    Path = System.getProperty("user.dir")+File.separator+"rubbish"+File.separator+currentTimeStr;
+    // 创建文件夹
+    File folder = new File(Path);
+    if (!folder.exists()) {
+        boolean created = folder.mkdir();
+        if (created) {
+            System.out.println("文件夹创建成功！");
+        } else {
+            System.err.println("文件夹创建失败！");
+        }
+    } else {
+        System.out.println("文件夹已经存在，需另创建？");
+    }
+
+    outPath=Path+File.separator+"out.txt";
     // 获取文件名
     String fileName = file.getOriginalFilename();
     // 构建文件路径

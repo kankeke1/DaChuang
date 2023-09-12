@@ -2,6 +2,7 @@ package com.example.dachuang;
 
 import com.example.dachuang.service.generateService;
 import com.example.dachuang.service.generateServiceImpl;
+import com.example.dachuang.utils.util;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockMultipartFile;
@@ -35,8 +36,11 @@ class DaChuangApplicationTests {
 		// 现在，你可以使用multipartFile来模拟处理上传的文件
 		generate.loadFeatureModel(multipartFile);
 		generate.setTimeNum(20,200);
-		generate.generateProduct();
-//		generate.downLoadProduct();
+		String res = generate.generateProduct();
+		//先保存才能后续读取
+		generate.downLoadProduct();
+		System.out.println(util.GetGenerateResult(res));
+
 
 
 	}

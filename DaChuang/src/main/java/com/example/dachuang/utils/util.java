@@ -15,7 +15,7 @@ import static com.sun.activation.registries.LogSupport.log;
  * @Version 1.0 （版本号）
  * @Description:
  */
-@Log4j
+
 public class util {
     public static String GetGenerateResult(String filepath){
         BufferedReader br ;
