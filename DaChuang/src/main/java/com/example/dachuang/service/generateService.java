@@ -18,7 +18,7 @@ public interface generateService {
     //设置时间，数量
     public void setTimeNum(int num,long time) ;
 
-    //生产产品
+    //生产产品,这里返回的是out的路径，但要先download才能生成out
     public String generateProduct() throws Exception;
     //把结果呈现出来
     public void showProduct();

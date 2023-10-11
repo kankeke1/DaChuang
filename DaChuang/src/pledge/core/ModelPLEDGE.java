@@ -530,7 +530,8 @@ public class ModelPLEDGE extends Observable {
         setIndeterminate(false);
         //进度条
         setProgress(0);
-        //如果存在求解器 (solver != null)，则设置求解器的超时时间和变量排序。
+        //如果存在求解器 (solver != null)，则设置求解器的超时时间和变量排序。1111111111111111111111111111111111111111
+
         //创建求解器迭代器对象 (solverIterator)，用于迭代解空间中的模型。
         int n = 1;
         int featuresCount = featuresIntList.size();

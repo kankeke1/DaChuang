@@ -27,6 +27,7 @@ public class generateServiceImpl implements generateService{
 
 @Override
     public void loadFeatureModel(MultipartFile file) throws Exception {
+    System.out.println("进入loadFeatureModel");
     // 获取当前时间
     LocalDateTime currentTime = LocalDateTime.now();
     // 定义日期时间格式
@@ -63,11 +64,13 @@ public class generateServiceImpl implements generateService{
     if (fileName.endsWith(".dimacs")) {
 
         model=new ModelPLEDGE();
+        System.out.println("进入.dimacs的loadFeatureModel");
         model.loadFeatureModel(filePath, model.getFeatureModelFormat().DIMACS);
 
     } else if (fileName.endsWith(".splot")) {
 
         model=new ModelPLEDGE();
+        System.out.println("进入.splot的loadFeatureModel");
         model.loadFeatureModel(filePath, model.getFeatureModelFormat().SPLOT);
 
     } else {

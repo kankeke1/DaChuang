@@ -30,7 +30,7 @@ public class generateController {
     generateService generateService;
     @RequestMapping("/generateModel")
     @ResponseBody
-    public String loadModel(@RequestParam("file")MultipartFile file,@RequestParam("time") int time ,@RequestParam("num") int num){
+    public String loadModel(@RequestParam("file")MultipartFile file,@RequestParam("time") int time ,@RequestParam("num") int num) throws Exception {
         if(time<=0){
             return "时间参数设置错误：不能小于0";
         }
@@ -43,7 +43,7 @@ public class generateController {
                 e.printStackTrace();
 
         }
-        log("loadFeatureModel succeed");
+        System.out.println("loadFeatureModel succeed");
         String res="";
         generateService.setTimeNum(num,time);
         try {
@@ -53,6 +53,8 @@ public class generateController {
             log(e.getMessage(),e);
         }
         log("generate Product Succeed");
+        generateService.downLoadProduct();
+
         return util.GetGenerateResult(res);
        
     }
