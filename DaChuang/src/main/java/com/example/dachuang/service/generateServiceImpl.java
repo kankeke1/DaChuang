@@ -87,9 +87,16 @@ public class generateServiceImpl implements generateService{
 
 @Override
     public String generateProduct() throws Exception {
-    model.generateProducts();
+    model.generateProducts(0);
     return outPath;
 }
+
+@Override
+    public String generateProduct(int type) throws Exception {
+        model.generateProducts(type);
+        return outPath;
+    }
+
 
 @Override
     public void showProduct(){

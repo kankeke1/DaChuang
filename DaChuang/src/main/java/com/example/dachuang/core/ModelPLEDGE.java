@@ -714,13 +714,17 @@ public class ModelPLEDGE extends Observable {
      * Generate products.
      * @throws Exception if an error occurs during the generation.
      */
-    public void generateProducts() throws Exception {
+    public void generateProducts(int type) throws Exception {
         setRunning(true);
         setIndeterminate(false);
         setGlobalAction(GLOBAL_ACTION_GENERATING_PRODUCTS);
-        //生成产品
-        products = generationTechnique.generateProducts(this, nbProductsToGenerate, generationTimeMSAllowed, prioritizationTechnique);
-
+        //生成产品,0为greedy，1为nearoptional
+        if(type==0) {
+            products = generationTechnique.generateProducts(this, nbProductsToGenerate, generationTimeMSAllowed, prioritizationTechniques.get(0));
+        }
+        else{
+            products = generationTechnique.generateProducts(this, nbProductsToGenerate, generationTimeMSAllowed, prioritizationTechniques.get(1));
+        }
         setRunning(false);
         setChanged();
         notifyObservers();

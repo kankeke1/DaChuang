@@ -25,8 +25,9 @@ public class util {
             String line;
             while((line = br.readLine())!=null){
                     res+=line;
-                    res+="+";
+                    res+="\n";
             }
+            //res = res.substring(0, res.length() - 1)+'\n';
         } catch (IOException e) {
             e.printStackTrace();
             log(e.getMessage(),e);

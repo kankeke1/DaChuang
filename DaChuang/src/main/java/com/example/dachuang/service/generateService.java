@@ -20,6 +20,7 @@ public interface generateService {
 
     //生产产品,这里返回的是out的路径，但要先download才能生成out
     public String generateProduct() throws Exception;
+    public String generateProduct(int type) throws Exception;
     //把结果呈现出来
     public void showProduct();
     //给用户下载结果

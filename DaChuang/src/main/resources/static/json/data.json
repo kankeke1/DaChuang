@@ -1,0 +1,61 @@
+{
+    "Feature_Model_Information":[
+        {
+            "Name":"Cellphone",
+            "Format":"SPLOT",
+            "Number_of_CNF_constraints":"22",
+            "Number_of_features":"11",
+            "Number_of_core_features":"3",
+            "Number_of_dead_features":"0"
+        }
+    ],
+    "Features":[
+        {"Number":"1","Name":"cellphone","Type":"Core"},
+        {"Number":"2","Name":"wireless","Type":"Free"},
+        {"Number":"3","Name":"accu_cell","Type":"Core"},
+        {"Number":"4","Name":"display","Type":"Core"},
+        {"Number":"5","Name":"infrared","Type":"Free"},
+        {"Number":"6","Name":"bluetooth","Type":"Free"},
+        {"Number":"7","Name":"li_ion","Type":"Free"},
+        {"Number":"8","Name":"ni_mh","Type":"Free"},
+        {"Number":"9","Name":"ni_ca","Type":"Free"},
+        {"Number":"10","Name":"color","Type":"Free"},
+        {"Number":"11","Name":"monochrome","Type":"Free"}
+    ],
+    "CNF_Constraints":[
+        "cellphone",
+        "! wireless   OR   cellphone",
+        "! accu_cell   OR   cellphone",
+        "! cellphone   OR   accu_cell",
+        "! display   OR   cellphone",
+        "! cellphone   OR   display",
+        "! infrared   OR   wireless",
+        "! bluetooth   OR   wireless",
+        "! wireless   OR   infrared   OR   bluetooth",
+        "! li_ion   OR   accu_cell",
+        "! ni_mh   OR   accu_cell",
+        "! ni_ca   OR   accu_cell",
+        "! accu_cell   OR   li_ion   OR   ni_mh   OR   ni_ca",
+        "! li_ion   OR   ! ni_mh",
+        "! li_ion   OR   ! ni_ca",
+        "! ni_mh   OR   ! ni_ca",
+        "! color   OR   display",
+        "! monochrome   OR   display",
+        "! display   OR   color   OR   monochrome",
+        "! color   OR   ! monochrome",
+        "! bluetooth   OR   li_ion",
+        "! color   OR   ! ni_ca"
+    ],
+    "Products":[
+        {"Number":"P1","Product":"cellphone    wireless    accu_cell    display    infrared    bluetooth    li_ion    color"},
+        {"Number":"P2","Product":"cellphone    accu_cell    display    ni_mh    monochrome"},
+        {"Number":"P3","Product":"cellphone    wireless    accu_cell    display    infrared    bluetooth    li_ion    monochrome"},
+        {"Number":"P4","Product":"cellphone    accu_cell    display    ni_mh    color"},
+        {"Number":"P5","Product":"cellphone    accu_cell    display    li_ion    color"},
+        {"Number":"P6","Product":"cellphone    wireless    accu_cell    display    infrared    ni_ca    monochrome"},
+        {"Number":"P7","Product":"cellphone    wireless    accu_cell    display    infrared    ni_mh    color"},
+        {"Number":"P8","Product":"cellphone    accu_cell    display    ni_ca    monochrome"},
+        {"Number":"P9","Product":"cellphone    wireless    accu_cell    display    bluetooth    li_ion    color"},
+        {"Number":"P10","Product":"cellphone    wireless    accu_cell    display    infrared    ni_mh    monochrome"}
+    ]
+}

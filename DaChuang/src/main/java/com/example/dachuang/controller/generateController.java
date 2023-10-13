@@ -6,6 +6,7 @@ import com.example.dachuang.utils.util;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -30,7 +31,10 @@ public class generateController {
     generateService generateService;
     @RequestMapping("/generateModel")
     @ResponseBody
-    public String loadModel(@RequestParam("file")MultipartFile file,@RequestParam("time") int time ,@RequestParam("num") int num) throws Exception {
+    public String loadModel(@RequestParam("file")MultipartFile file,@RequestParam("time") int time ,
+                            @RequestParam("num") int num,@RequestParam(value = "type", defaultValue = "0") int type) throws Exception {
+        //type=0为greedy，1为nearoptimal
+
         if(time<=0){
             return "时间参数设置错误：不能小于0";
         }
@@ -47,7 +51,7 @@ public class generateController {
         String res="";
         generateService.setTimeNum(num,time);
         try {
-           res = generateService.generateProduct();
+           res = generateService.generateProduct(type);
         } catch (Exception e) {
             e.printStackTrace();
             log(e.getMessage(),e);
@@ -58,5 +62,4 @@ public class generateController {
         return util.GetGenerateResult(res);
        
     }
-
 }
