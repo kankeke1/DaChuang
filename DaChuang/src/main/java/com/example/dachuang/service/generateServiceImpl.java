@@ -61,19 +61,21 @@ public class generateServiceImpl implements generateService{
     // 返回文件的路径
     String filePath=filePath1.toString();
 
-    if (fileName.endsWith(".dimacs")) {
+    if (fileName.toLowerCase().endsWith(".dimacs")) {
 
         model=new ModelPLEDGE();
         System.out.println("进入.dimacs的loadFeatureModel");
         model.loadFeatureModel(filePath, model.getFeatureModelFormat().DIMACS);
 
-    } else if (fileName.endsWith(".splot")) {
+    }
+    else if (fileName.toLowerCase().endsWith("xml")) {
 
         model=new ModelPLEDGE();
-        System.out.println("进入.splot的loadFeatureModel");
+        System.out.println("进入.splot的loadFeatureModel,xml格式");
         model.loadFeatureModel(filePath, model.getFeatureModelFormat().SPLOT);
 
-    } else {
+    }
+    else {
         System.out.println("传入文件类型错误");
     }
 
