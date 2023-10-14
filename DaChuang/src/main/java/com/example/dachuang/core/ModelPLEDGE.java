@@ -841,7 +841,7 @@ public class ModelPLEDGE extends Observable {
         while (products.size() < count) {
 
             try {
-                if (solverIterator.isSatisfiable()) {
+                if (getSolverIterator()!=null&&getSolverIterator().isSatisfiable()) {
                     Product product = toProduct(solverIterator.model());
 
                     if (!products.contains(product)) {
