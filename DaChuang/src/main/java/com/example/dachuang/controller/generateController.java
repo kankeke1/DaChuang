@@ -31,7 +31,7 @@ public class generateController {
     generateService generateService;
     @RequestMapping("/generateModel")
     @ResponseBody
-    public String loadModel(@RequestParam("file")MultipartFile file,@RequestParam("time") int time ,
+    public String generateProduct(@RequestParam("file")MultipartFile file,@RequestParam("time") int time ,
                             @RequestParam("num") int num,@RequestParam(value = "type", defaultValue = "0") int type) throws Exception {
         //type=0为greedy，1为nearoptimal
 
@@ -62,4 +62,17 @@ public class generateController {
         return util.GetGenerateResult(res);
        
     }
+
+
+    @RequestMapping("/generateModelXy")
+    @ResponseBody
+    public String generateProductXy(@RequestParam("file")MultipartFile file,
+                                    @RequestParam("type")int type,@RequestParam("num") int num,
+                                    @RequestParam("n-wise")int tstrength) throws Exception {
+        //保存文件路径
+    String path=generateService.loadFeatureModelXy(file);
+    String res=generateService.useXy0(type,num,tstrength,path);
+    return util.GetGenerateResult(res);
+    }
+
 }

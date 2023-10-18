@@ -1,4 +1,0 @@
-<feature_model name="Cellphone">
-<feature_tree> :r cellphone :o wireless :g [1,*] : infrared : bluetooth (bluetooth) :m accu_cell :g [1,1] : li_ion (li_ion) : ni_mh : ni_ca (ni_ca) :m display :g [1,1] : color (color) : monochrome </feature_tree>
-<constraints> c1: ~bluetooth or li_ion c2: ~color or ~ni_ca </constraints>
-</feature_model>

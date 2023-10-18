@@ -55,25 +55,17 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.sat4j</groupId>
-			<artifactId>org.sat4j.core</artifactId>
-			<version>2.0.5</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/resources/lib/org.sat4j.core_2_0_5.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>org.sat4j</groupId>
-			<artifactId>org.sat4j.core</artifactId>
-			<version>2.0.5</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/resources/lib/org.sat4j.core_trunk.jar</systemPath>
-		</dependency>
-		<dependency>
 			<groupId>splar</groupId> <!-- 你可以使用任何有效的 groupId -->
 			<artifactId>splar</artifactId>
 			<version>1.0</version> <!-- 你可以使用任何有效的版本号 -->
 			<scope>system</scope>
 			<systemPath>${project.basedir}/src/main/resources/lib/splar.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.12.0</version> <!-- 请使用你想要的版本号 -->
 		</dependency>
 
 	</dependencies>

@@ -4,6 +4,7 @@ import com.example.dachuang.core.ModelPLEDGE;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
+import spl.SPL;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,8 +35,6 @@ public class generateServiceImpl implements generateService{
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss");
     // 将日期时间对象转换为字符串
     String currentTimeStr = currentTime.format(formatter);
-
-
     // 获取Spring Boot项目的根目录路径
     Path = System.getProperty("user.dir")+File.separator+"rubbish"+File.separator+currentTimeStr;
     // 创建文件夹
@@ -110,4 +109,71 @@ public class generateServiceImpl implements generateService{
     model.saveProducts(outPath);
 
     }
+
+
+@Override
+    public String loadFeatureModelXy(MultipartFile file) throws Exception{
+    System.out.println("进入loadFeatureModel");
+    // 获取当前时间
+    LocalDateTime currentTime = LocalDateTime.now();
+    // 定义日期时间格式
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss");
+    // 将日期时间对象转换为字符串
+    String currentTimeStr = currentTime.format(formatter);
+    // 获取Spring Boot项目的根目录路径
+    Path = System.getProperty("user.dir")+File.separator+"rubbish"+File.separator+currentTimeStr;
+    // 创建文件夹
+    File folder = new File(Path);
+    if (!folder.exists()) {
+        boolean created = folder.mkdir();
+        if (created) {
+            System.out.println("文件夹创建成功！");
+        } else {
+            System.err.println("文件夹创建失败！");
+        }
+    } else {
+        System.out.println("文件夹已经存在，需另创建？");
+    }
+    // 获取文件名
+    String fileName = file.getOriginalFilename();
+    // 构建文件路径
+    Path filePath1 = Paths.get(Path, fileName);
+    // 将文件保存到服务器
+    Files.write(filePath1, file.getBytes());
+    // 返回文件的路径
+    String filePath=filePath1.toString();
+
+    return filePath;
+    }
+
+@Override
+    public String useXy0(int type,int Prodsnum,int tstrength,String path) throws Exception {
+
+    Path temppath = Paths.get(path);
+    String fileName = temppath.getFileName().toString();
+    Path parentPath = temppath.getParent();
+    String parentPathStr=parentPath.toString();
+
+    System.out.println("path为："+parentPathStr);
+    System.out.println("filename为："+fileName);
+
+    boolean isDimacs=true;
+    if (fileName.toLowerCase().endsWith("xml")) {
+        isDimacs=false;
+    }
+
+    SPL.generateXy(isDimacs,type,Prodsnum,tstrength,parentPathStr,fileName);
+
+    if(type==0){
+        String productPath = parentPathStr + "/SampleResults/" + fileName +"/" + Prodsnum + "prods/"+"Products.0";
+        System.out.println("返回的产品路径："+productPath);
+        return productPath;
+    }
+    else{
+        //type=1时的情况
+        return "";
+    }
+
+    }
+
 }

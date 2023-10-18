@@ -17,7 +17,6 @@ public interface generateService {
     public void loadFeatureModel(MultipartFile file) throws Exception;
     //设置时间，数量
     public void setTimeNum(int num,long time) ;
-
     //生产产品,这里返回的是out的路径，但要先download才能生成out
     public String generateProduct() throws Exception;
     public String generateProduct(int type) throws Exception;
@@ -25,4 +24,12 @@ public interface generateService {
     public void showProduct();
     //给用户下载结果
     public void downLoadProduct() throws Exception;
+
+
+    //以下为Xy
+    //把用文件保存
+    public String loadFeatureModelXy(MultipartFile file) throws Exception;
+    //调用函数0
+    public String useXy0(int type,int Prodsnum,int tstrength,String path) throws Exception;
+
 }
