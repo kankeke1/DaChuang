@@ -50,7 +50,7 @@ class DaChuangApplicationTests {
 	@Test
 	void testXiangyiCode() throws Exception {
 		String filePath = "E:/Users/15538/Documents/GitHub/DaChuang/DaChuang/rubbish/2023.10.17.15.28";
-		SPL.generateXy(true,2,100,3,filePath,"E-shop");
+		SPL.generateXy(true,1,100,3,filePath,"E-shop");
 		//SPL.generateXy(true,1,100,3,filePath,"WebPortal");
 
 	}

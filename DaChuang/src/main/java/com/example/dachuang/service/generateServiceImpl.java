@@ -7,12 +7,16 @@ import org.springframework.web.multipart.MultipartFile;
 import spl.SPL;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 /**
  * @author mmy
@@ -147,7 +151,7 @@ public class generateServiceImpl implements generateService{
     }
 
 @Override
-    public String useXy0(int type,int Prodsnum,int tstrength,String path) throws Exception {
+    public String useXy0(int type,int Prodsnum,int tstrength,String path ,String pathLastName) throws Exception {
 
     Path temppath = Paths.get(path);
     String fileName = temppath.getFileName().toString();
@@ -161,8 +165,21 @@ public class generateServiceImpl implements generateService{
     if (fileName.toLowerCase().endsWith("xml")) {
         isDimacs=false;
     }
-
+    //生成产品
     SPL.generateXy(isDimacs,type,Prodsnum,tstrength,parentPathStr,fileName);
+    System.out.println("产品生成完成");
+
+    //产品压缩
+    String sourceFolder = parentPathStr; // 要压缩的文件夹
+    String zipFilePath = System.getProperty("user.dir")+File.separator+"rubbish/"+pathLastName+  ".zip"; // 压缩文件的输出路径
+    try {
+        FileOutputStream fos = new FileOutputStream(zipFilePath);
+        ZipOutputStream zos = new ZipOutputStream(fos);
+        zipFolder(sourceFolder, sourceFolder, zos);
+        zos.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
 
     if(type==0){
         String productPath = parentPathStr + "/SampleResults/" + fileName +"/" + Prodsnum + "prods/"+"Products.0";
@@ -175,5 +192,27 @@ public class generateServiceImpl implements generateService{
     }
 
     }
+
+@Override
+    public void zipFolder(String sourceFolder, String basePath, ZipOutputStream zos) throws IOException {
+    File folder = new File(sourceFolder);
+    for (File file : folder.listFiles()) {
+        if (file.isDirectory()) {
+            zipFolder(file.getAbsolutePath(), basePath, zos);
+        } else {
+            String relativePath = file.getAbsolutePath().substring(basePath.length() + 1);
+            ZipEntry zipEntry = new ZipEntry(relativePath);
+            zos.putNextEntry(zipEntry);
+            byte[] buffer = new byte[1024];
+            int length;
+            FileInputStream fis = new FileInputStream(file);
+            while ((length = fis.read(buffer)) > 0) {
+                zos.write(buffer, 0, length);
+            }
+            fis.close();
+            zos.closeEntry();
+        }
+    }
+}
 
 }

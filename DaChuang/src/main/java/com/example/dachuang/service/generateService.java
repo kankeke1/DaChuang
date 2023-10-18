@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.zip.ZipOutputStream;
 
 /**
  * @author mmy
@@ -30,6 +31,9 @@ public interface generateService {
     //把用文件保存
     public String loadFeatureModelXy(MultipartFile file) throws Exception;
     //调用函数0
-    public String useXy0(int type,int Prodsnum,int tstrength,String path) throws Exception;
+    public String useXy0(int type,int Prodsnum,int tstrength,String path,String pathLastName) throws Exception;
+
+    //压缩文件的函数
+    public void zipFolder(String sourceFolder, String basePath, ZipOutputStream zos) throws IOException;
 
 }
