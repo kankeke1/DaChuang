@@ -102,6 +102,7 @@ public class generateController {
     @GetMapping("/downloadFile")
     @ResponseBody
     public ResponseEntity<Resource> downloadFile(@RequestParam("filename")String filename) {
+        System.out.println("进入返回压缩包接口");
         // 指定文件路径
         String filePath = System.getProperty("user.dir")+File.separator+"rubbish/"+filename+".zip";
 
@@ -113,6 +114,8 @@ public class generateController {
             HttpHeaders headers = new HttpHeaders();
             headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + resource.getFilename());
 
+            //返回文件
+            System.out.println("返回压缩包");
             // 返回文件资源
             return ResponseEntity.ok()
                     .headers(headers)
