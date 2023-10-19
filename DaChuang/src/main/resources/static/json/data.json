@@ -57,5 +57,12 @@
         {"Number":"P8","Product":"cellphone    accu_cell    display    ni_ca    monochrome"},
         {"Number":"P9","Product":"cellphone    wireless    accu_cell    display    bluetooth    li_ion    color"},
         {"Number":"P10","Product":"cellphone    wireless    accu_cell    display    infrared    ni_mh    monochrome"}
+    ],
+    "Pairwise_Coverage":[
+        {
+            "Number_of_valid_pairs_of_the_model":"170",
+            "Number_of_pairs_covered_by_the_products":"151",
+            "Coverage":"88.82%"
+        }
     ]
 }

@@ -89,7 +89,8 @@ public class generateController {
         // 获取上级目录的名称
         String lastFolder = parentDirectory.getFileName().toString();
 
-    String res=generateService.useXy0(type,num,tstrength,path,lastFolder);
+
+    String res=generateService.useXy0(0,30,3,path,lastFolder);
     String strres= util.GetGenerateResult(res);
     String[] arr=new String[2];
     arr[0]=strres;
