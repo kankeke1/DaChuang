@@ -1,7 +1,6 @@
 package com.example.dachuang.service;
 
 import com.example.dachuang.core.ModelPLEDGE;
-
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import spl.SPL;
@@ -15,6 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Random;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -40,9 +40,11 @@ public class generateServiceImpl implements generateService{
     // 将日期时间对象转换为字符串
     String currentTimeStr = currentTime.format(formatter);
     // 获取Spring Boot项目的根目录路径
-    Path = System.getProperty("user.dir")+File.separator+"rubbish"+File.separator+currentTimeStr;
+    Path = System.getProperty("user.dir")+File.separator+"rubbish"+File.separator+Random()+currentTimeStr;
+
     // 创建文件夹
     File folder = new File(Path);
+//    System.out.println("canwrite?:"+(folder.canWrite()?"yes":"no"));
     if (!folder.exists()) {
         boolean created = folder.mkdir();
         if (created) {
@@ -125,9 +127,10 @@ public class generateServiceImpl implements generateService{
     // 将日期时间对象转换为字符串
     String currentTimeStr = currentTime.format(formatter);
     // 获取Spring Boot项目的根目录路径
-    Path = System.getProperty("user.dir")+File.separator+"rubbish"+File.separator+currentTimeStr;
+    Path = System.getProperty("user.dir")+File.separator+"rubbish"+File.separator+Random()+currentTimeStr;
     // 创建文件夹
     File folder = new File(Path);
+    System.out.println("canwrite?:"+(folder.canWrite()?"yes":"no"));
     if (!folder.exists()) {
         boolean created = folder.mkdir();
         if (created) {
@@ -141,7 +144,7 @@ public class generateServiceImpl implements generateService{
     // 获取文件名
     String fileName = file.getOriginalFilename();
     // 构建文件路径
-    Path filePath1 = Paths.get(Path, fileName);
+    Path filePath1 = Paths.get(Path,fileName);
     // 将文件保存到服务器
     Files.write(filePath1, file.getBytes());
     // 返回文件的路径
@@ -182,7 +185,7 @@ public class generateServiceImpl implements generateService{
     }
 
     if(type==0){
-        String productPath = parentPathStr + "/SampleResults/" + fileName +"/" + Prodsnum + "prods/"+"Products.0";
+        String productPath = parentPathStr + "/SampleResults/" + fileName +"/" + Prodsnum + "prods/"+Random()+"Products.0";
         System.out.println("返回的产品路径："+productPath);
         return productPath;
     }
@@ -214,5 +217,13 @@ public class generateServiceImpl implements generateService{
         }
     }
 }
-
+    private String Random(){
+    StringBuilder salt =new StringBuilder();
+    Random random = new Random();
+        for(int i=0;i<8;i++) {
+            int num = random.nextInt(11);
+            salt.append(num);
+        }
+        return salt.toString();
+    }
 }

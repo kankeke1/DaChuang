@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="DaChuang" target="7" />
+      <module name="DaChuang" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
