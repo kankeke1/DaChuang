@@ -111,8 +111,9 @@ public class generateServiceImpl implements generateService{
 }
 
 @Override
-    public void downLoadProduct() throws Exception {
+    public ModelPLEDGE downLoadProduct() throws Exception {
     model.saveProducts(outPath);
+    return model;
 
     }
 

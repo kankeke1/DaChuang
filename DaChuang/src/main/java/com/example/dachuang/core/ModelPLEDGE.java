@@ -772,6 +772,7 @@ public class ModelPLEDGE extends Observable {
     public String getPairwiseCoverage() throws TimeoutException, java.util.concurrent.TimeoutException {
         setRunning(true);
         setIndeterminate(false);
+
         setGlobalAction(GLOBAL_ACTION_COVERAGE);
         setCurrentAction(CURRENT_ACTION_PRODUCT_PAIRS);
 

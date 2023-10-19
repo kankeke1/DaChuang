@@ -1,5 +1,6 @@
 package com.example.dachuang.controller;
 
+import com.example.dachuang.core.ModelPLEDGE;
 import com.example.dachuang.service.generateService;
 import com.example.dachuang.utils.util;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,8 +60,14 @@ public class generateController {
             e.printStackTrace();
             log(e.getMessage(),e);
         }
-        log("generate Product Succeed");
-        generateService.downLoadProduct();
+        System.out.println("generate Product Succeed");
+        ModelPLEDGE mod= generateService.downLoadProduct();
+
+//        //覆盖率
+ //       String coverrageStr=mod.getPairwiseCoverage();
+//        System.out.println("覆盖率在这里"+coverrageStr);
+
+
 
         return util.GetGenerateResult(res);
        

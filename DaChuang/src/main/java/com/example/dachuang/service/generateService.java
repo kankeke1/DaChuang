@@ -1,5 +1,6 @@
 package com.example.dachuang.service;
 
+import com.example.dachuang.core.ModelPLEDGE;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,7 +25,7 @@ public interface generateService {
     //把结果呈现出来
     public void showProduct();
     //给用户下载结果
-    public void downLoadProduct() throws Exception;
+    public ModelPLEDGE downLoadProduct() throws Exception;
 
 
     //以下为Xy
