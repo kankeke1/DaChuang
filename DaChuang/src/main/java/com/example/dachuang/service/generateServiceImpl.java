@@ -71,13 +71,13 @@ public class generateServiceImpl implements generateService{
         model.loadFeatureModel(filePath, model.getFeatureModelFormat().DIMACS);
 
     }
-    else if (fileName.toLowerCase().endsWith("xml")) {
-
-        model=new ModelPLEDGE();
-        System.out.println("进入.splot的loadFeatureModel,xml格式");
-        model.loadFeatureModel(filePath, model.getFeatureModelFormat().SPLOT);
-
-    }
+//    else if (fileName.toLowerCase().endsWith("xml")) {
+//
+//        model=new ModelPLEDGE();
+//        System.out.println("进入.splot的loadFeatureModel,xml格式");
+//        model.loadFeatureModel(filePath, model.getFeatureModelFormat().SPLOT);
+//
+//    }
     else {
         System.out.println("传入文件类型错误");
     }
