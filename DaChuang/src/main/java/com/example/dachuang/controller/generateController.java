@@ -78,6 +78,9 @@ public class generateController {
     }
     private String[] getCoverageRet(String cov){
         String[] Coverage=new String[3];
+        if(cov.equals('#')) {
+            return new String[]{"#"};
+        }
         String trim1 = cov.substring(StringUtils.indexOf(cov,":")+1);
         String pairsOfModels = trim1.trim();
         pairsOfModels = pairsOfModels.substring(0,StringUtils.indexOf(pairsOfModels,"\n"));
