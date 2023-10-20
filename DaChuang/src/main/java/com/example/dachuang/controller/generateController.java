@@ -72,6 +72,7 @@ public class generateController {
         getCoverage(Coverage,mod);
 //        System.out.println("覆盖率在这里"+Coverage[0]);
 //        System.out.println(StringUtils.indexOf(Coverage[0], ":") + 1);
+
         String[] ret = getCoverageRet(Coverage[0]);
         return new String[]{util.GetGenerateResult(res),ret[0],ret[1],ret[2]};
     }
@@ -90,6 +91,7 @@ public class generateController {
         Coverage[0] =pairsOfModels;
         Coverage[1] = pairsOfPros;
         Coverage[2] = Coverage_trim;
+        return Coverage;
     }
     private String getCoverage(String[] Coverage,ModelPLEDGE mod) {
         Thread thread = new Thread(() -> {
