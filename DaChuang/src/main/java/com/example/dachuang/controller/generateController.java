@@ -72,7 +72,12 @@ public class generateController {
         getCoverage(Coverage,mod);
 //        System.out.println("覆盖率在这里"+Coverage[0]);
 //        System.out.println(StringUtils.indexOf(Coverage[0], ":") + 1);
-        String trim1 = Coverage[0].substring(StringUtils.indexOf(Coverage[0],":")+1);
+        String[] ret = getCoverageRet(Coverage[0]);
+        return new String[]{util.GetGenerateResult(res),ret[0],ret[1],ret[2]};
+    }
+    private String[] getCoverageRet(String cov){
+        String[] Coverage=new String[3];
+        String trim1 = cov.substring(StringUtils.indexOf(cov,":")+1);
         String pairsOfModels = trim1.trim();
         pairsOfModels = pairsOfModels.substring(0,StringUtils.indexOf(pairsOfModels,"\n"));
 //        System.out.println(pairsOfModels);
@@ -82,8 +87,9 @@ public class generateController {
         pairsOfPros = pairsOfPros.substring(0,StringUtils.indexOf(pairsOfPros,"\n"));
         String trim3 = trim2.substring(StringUtils.indexOf(trim2,":")+1);
         String Coverage_trim = trim3.trim();
-        return new String[]{util.GetGenerateResult(res),pairsOfModels,pairsOfPros,Coverage_trim};
-       
+        Coverage[0] =pairsOfModels;
+        Coverage[1] = pairsOfPros;
+        Coverage[2] = Coverage_trim;
     }
     private String getCoverage(String[] Coverage,ModelPLEDGE mod) {
         Thread thread = new Thread(() -> {

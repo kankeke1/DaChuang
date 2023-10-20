@@ -6,28 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="16db4a0b-2291-4b2e-b052-b6724db7f8fe" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/009457052023-10-19 21-10-53/ecos-icsell.dimacs" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/009457052023-10-19 21-10-53/ecos-icsell.dimacs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/009457052023-10-19 21-10-53/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/009457052023-10-19 21-10-53/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/0298109152023-10-19 23-11-57/ecos-icsell.dimacs" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/0298109152023-10-19 23-11-57/ecos-icsell.dimacs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/0298109152023-10-19 23-11-57/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/0298109152023-10-19 23-11-57/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/3284010902023-10-19 23-22-45/Amazon.dimacs" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/3284010902023-10-19 23-22-45/Amazon.dimacs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/3284010902023-10-19 23-22-45/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/3284010902023-10-19 23-22-45/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/538851572023-10-19 22-55-39/Amazon.dimacs" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/538851572023-10-19 22-55-39/Amazon.dimacs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/538851572023-10-19 22-55-39/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/538851572023-10-19 22-55-39/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/5622372102023-10-19 22-55-24/Amazon.dimacs" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/5622372102023-10-19 22-55-24/Amazon.dimacs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/5622372102023-10-19 22-55-24/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/5622372102023-10-19 22-55-24/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/7193121062023-10-19 22-54-36/ecos-icsell.dimacs" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/7193121062023-10-19 22-54-36/ecos-icsell.dimacs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/7193121062023-10-19 22-54-36/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/7193121062023-10-19 22-54-36/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/805756972023-10-19 22-56-14/ecos-icsell.dimacs" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/805756972023-10-19 22-56-14/ecos-icsell.dimacs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/805756972023-10-19 22-56-14/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/805756972023-10-19 22-56-14/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/873150122023-10-19 23-21-40/Amazon.dimacs" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/873150122023-10-19 23-21-40/Amazon.dimacs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/rubbish/873150122023-10-19 23-21-40/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/rubbish/873150122023-10-19 23-21-40/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/config/ExecutePoolConfiguration.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/controller/generateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/controller/generateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/core/ModelPLEDGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/core/ModelPLEDGE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/service/generateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/service/generateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/service/generateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/service/generateServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DaChuang/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/DaChuang/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/DaChuang/target/" />
@@ -71,8 +50,8 @@
       <file leaf-file-name="generateServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/service/generateServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="172" column="13" lean-forward="true" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
+            <state relative-caret-position="4212">
+              <caret line="172" column="13" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,8 +62,8 @@
       <file leaf-file-name="generateController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/controller/generateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+            <state relative-caret-position="137">
+              <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -92,7 +71,7 @@
       <file leaf-file-name="String.java" pinned="false" current-in-tab="false">
         <entry file="jar://E:/JAVA/jdk1.8.0_131/src.zip!/java/lang/String.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
+            <state relative-caret-position="75141">
               <caret line="2866" column="18" selection-start-line="2866" selection-start-column="18" selection-end-line="2866" selection-end-column="18" />
             </state>
           </provider>
@@ -101,17 +80,8 @@
       <file leaf-file-name="generateService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/service/generateService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SPL.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/spl/SPL.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="694">
-              <caret line="247" column="33" lean-forward="true" selection-start-line="247" selection-start-column="33" selection-end-line="247" selection-end-column="33" />
+            <state relative-caret-position="783">
+              <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -120,16 +90,7 @@
         <entry file="file://$PROJECT_DIR$/DaChuang/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoveltySearch1plusN.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/spl/techniques/ns/NoveltySearch1plusN.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="478" column="28" selection-start-line="478" selection-start-column="28" selection-end-line="478" selection-end-column="28" />
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -137,20 +98,11 @@
       <file leaf-file-name="ModelPLEDGE.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/core/ModelPLEDGE.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-431">
+            <state relative-caret-position="18144">
               <caret line="771" column="18" selection-start-line="771" selection-start-column="18" selection-end-line="771" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SPL.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/dist/lib/SPL.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2240">
-              <caret line="1219" column="24" lean-forward="true" selection-start-line="1219" selection-start-column="24" selection-end-line="1219" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -199,18 +151,28 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="DaChuang" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="DaChuang" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="29" />
-    <option name="width" value="2071" />
-    <option name="height" value="1436" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-39" />
+    <option name="y" value="126" />
+    <option name="width" value="1943" />
+    <option name="height" value="1103" />
   </component>
   <component name="ProjectId" id="2UmUZPXCSwutD5iKRddPP2THIzP" />
   <component name="ProjectLevelVcsManager">
@@ -222,6 +184,7 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -322,7 +285,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -337,7 +299,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DaChuang/src/main/resources/lib/splar.jar!/splar/samples" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20457143" />
@@ -481,6 +443,7 @@
       <workItem from="1697722454458" duration="590000" />
       <workItem from="1697723217894" duration="1351000" />
       <workItem from="1697727473904" duration="7390000" />
+      <workItem from="1697769824499" duration="299000" />
     </task>
     <servers />
   </component>
@@ -493,51 +456,52 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24520000" />
+    <option name="totallyTimeSpent" value="24819000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="29" width="2071" height="1436" extended-state="0" />
+    <frame x="-30" y="106" width="1554" height="882" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" sideWeight="0.49960724" visible="true" weight="0.050721034" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3298887" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.49018067" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.31229773" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" sideWeight="0.49960724" visible="true" weight="0.054144386" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32931727" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.41162607" />
-      <window_info anchor="right" id="Coverage" sideWeight="0.5003928" side_tool="true" visible="true" weight="0.050721034" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32931727" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22376926" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24197862" />
       <window_info id="Web" order="3" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3298887" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.49018067" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.31229773" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="4" sideWeight="0.5003928" side_tool="true" visible="true" weight="0.050721034" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32931727" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33413848" />
       <window_info anchor="bottom" id="Spring" order="11" />
       <window_info id="Image Layers" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33413848" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32931727" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -562,7 +526,6 @@
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32931727" />
       <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.5080515" />
     </layout-to-restore>
   </component>
@@ -660,10 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1566">
           <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
-          <folding>
-            <element signature="e#2673#2674#0" expanded="true" />
-            <element signature="e#2741#2742#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -758,10 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1566">
           <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
-          <folding>
-            <element signature="e#2673#2674#0" expanded="true" />
-            <element signature="e#2741#2742#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,13 +818,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/spl/utils/FileUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/spl/utils/FileUtils.class" />
     <entry file="file://$PROJECT_DIR$/DaChuang/src/test/java/com/example/dachuang/DaChuangApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -877,24 +826,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/spl/fm/Product.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/config/ExecutePoolConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/spl/fm/Product.class" />
+    <entry file="file://$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/config/ExecutePoolConfiguration.java" />
     <entry file="file://$PROJECT_DIR$/DaChuang/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -907,45 +844,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/service/generateService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        <state relative-caret-position="783">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/spl/techniques/ns/NoveltySearch1plusN.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="478" column="28" selection-start-line="478" selection-start-column="28" selection-end-line="478" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/dist/lib/SPL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2240">
-          <caret line="1219" column="24" lean-forward="true" selection-start-line="1219" selection-start-column="24" selection-end-line="1219" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/spl/techniques/ns/NoveltySearch1plusN.class" />
+    <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/dist/lib/SPL.java" />
     <entry file="file://$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/service/generateServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="172" column="13" lean-forward="true" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
+        <state relative-caret-position="4212">
+          <caret line="172" column="13" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/spl/SPL.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="247" column="33" lean-forward="true" selection-start-line="247" selection-start-column="33" selection-end-line="247" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/DaChuang/src/main/resources/lib/tesns.jar!/spl/SPL.class" />
     <entry file="file://$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/core/ModelPLEDGE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-431">
+        <state relative-caret-position="18144">
           <caret line="771" column="18" selection-start-line="771" selection-start-column="18" selection-end-line="771" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -955,15 +874,15 @@
     </entry>
     <entry file="jar://E:/JAVA/jdk1.8.0_131/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
+        <state relative-caret-position="75141">
           <caret line="2866" column="18" selection-start-line="2866" selection-start-column="18" selection-end-line="2866" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DaChuang/src/main/java/com/example/dachuang/controller/generateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        <state relative-caret-position="137">
+          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
         </state>
       </provider>
     </entry>
