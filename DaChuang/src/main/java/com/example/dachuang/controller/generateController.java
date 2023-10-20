@@ -83,7 +83,7 @@ public class generateController {
         }
         String trim1 = cov.substring(StringUtils.indexOf(cov,":")+1);
         String pairsOfModels = trim1.trim();
-        pairsOfModels = pairsOfModels.substring(0,StringUtils.indexOf(pairsOfModels,"\n"));
+        pairsOfModels = pairsOfModels.substring(0,StringUtils.indexOf(pairsOfModels,"\n")==-1?0:StringUtils.indexOf(pairsOfModels,"\n"));
 //        System.out.println(pairsOfModels);
 
         String trim2 = trim1.substring(StringUtils.indexOf(trim1,":")+1);

@@ -16,7 +16,7 @@ import java.nio.file.Path;
 @Component
 public class filecleanupServiceImpl implements filecleanupService{
     @Override
-    @Scheduled(fixedRate = 3600000) // 每小时运行一次3600000
+    @Scheduled(fixedRate = 600000) // 每小时运行一次3600000
     public void cleanupExpiredFiles() throws IOException {
         File baseDirectory = new File(UPLOAD_DIR);
         File[] folders = baseDirectory.listFiles();

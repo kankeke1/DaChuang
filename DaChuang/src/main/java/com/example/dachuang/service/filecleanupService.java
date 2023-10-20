@@ -16,7 +16,7 @@ public interface filecleanupService {
     // 获取上传文件目录路径
     static final String UPLOAD_DIR = System.getProperty("user.dir")+File.separator+"rubbish";
     //设置文件过期时间
-    static final long FILE_EXPIRATION_TIME = 24 * 60 * 60 * 1000 ; // 一天的毫秒数24 * 60 * 60 * 1000
+    static final long FILE_EXPIRATION_TIME = 10 * 60 * 1000 ; // 一天的毫秒数24 * 60 * 60 * 1000
 
 
     public void cleanupExpiredFiles() throws IOException;
