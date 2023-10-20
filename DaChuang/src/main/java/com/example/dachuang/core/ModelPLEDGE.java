@@ -769,7 +769,7 @@ public class ModelPLEDGE extends Observable {
      * Compute the pairwise coverage of the products.
      * @return the pairwise coverage of the products.
      */
-    public String getPairwiseCoverage() throws TimeoutException, java.util.concurrent.TimeoutException {
+    public String getPairwiseCoverage() throws Exception, java.util.concurrent.TimeoutException {
         setRunning(true);
         setIndeterminate(false);
 

@@ -3,6 +3,7 @@ package com.example.dachuang.controller;
 import com.example.dachuang.core.ModelPLEDGE;
 import com.example.dachuang.service.generateService;
 import com.example.dachuang.utils.util;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -19,6 +20,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.concurrent.TimeoutException;
 
 import static com.sun.activation.registries.LogSupport.log;
 
@@ -35,15 +37,15 @@ public class generateController {
     generateService generateService;
     @RequestMapping("/generateModel")
     @ResponseBody
-    public String generateProduct(@RequestParam("file")MultipartFile file,@RequestParam("time") int time ,
+    public String[] generateProduct(@RequestParam("file")MultipartFile file,@RequestParam("time") int time ,
                             @RequestParam("num") int num,@RequestParam(value = "type", defaultValue = "0") int type) throws Exception {
         //type=0为greedy，1为nearoptimal
 
         if(time<=0){
-            return "时间参数设置错误：不能小于0";
+            return new String[]{"时间参数设置错误：不能小于0"};
         }
         if(file.isEmpty()){
-            return "上传失败，请选择文件";
+            return new String[]{"上传失败，请选择文件"};
         }
         try {
             generateService.loadFeatureModel(file);
@@ -64,15 +66,49 @@ public class generateController {
         ModelPLEDGE mod= generateService.downLoadProduct();
 
 //        //覆盖率
- //       String coverrageStr=mod.getPairwiseCoverage();
-//        System.out.println("覆盖率在这里"+coverrageStr);
+        String[] Coverage=new String[1];
+        Coverage[0] = "#";
 
+        getCoverage(Coverage,mod);
+//        System.out.println("覆盖率在这里"+Coverage[0]);
+//        System.out.println(StringUtils.indexOf(Coverage[0], ":") + 1);
+        String trim1 = Coverage[0].substring(StringUtils.indexOf(Coverage[0],":")+1);
+        String pairsOfModels = trim1.trim();
+        pairsOfModels = pairsOfModels.substring(0,StringUtils.indexOf(pairsOfModels,"\n"));
+//        System.out.println(pairsOfModels);
 
-
-        return util.GetGenerateResult(res);
+        String trim2 = trim1.substring(StringUtils.indexOf(trim1,":")+1);
+        String pairsOfPros = trim2.trim();
+        pairsOfPros = pairsOfPros.substring(0,StringUtils.indexOf(pairsOfPros,"\n"));
+        String trim3 = trim2.substring(StringUtils.indexOf(trim2,":")+1);
+        String Coverage_trim = trim3.trim();
+        return new String[]{util.GetGenerateResult(res),pairsOfModels,pairsOfPros,Coverage_trim};
        
     }
-
+    private String getCoverage(String[] Coverage,ModelPLEDGE mod) {
+        Thread thread = new Thread(() -> {
+            try {
+              Coverage[0] =  mod.getPairwiseCoverage();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        thread.start();
+        long maxExecutionTime = 5000*2;//5 s
+        long startTime = System.currentTimeMillis();
+        while (true) {
+            if (System.currentTimeMillis() - startTime > maxExecutionTime) {
+                // 如果执行时间超过5秒，中断线程
+                thread.interrupt();
+                break;
+            }
+            if(!Coverage[0].equals("#")) {
+                thread.interrupt();
+                break;
+            }
+        }
+        return Coverage[0];
+    }
 
     @RequestMapping("/generateModelXy")
     @ResponseBody
