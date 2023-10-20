@@ -88,7 +88,7 @@ public class generateController {
 
         String trim2 = trim1.substring(StringUtils.indexOf(trim1,":")+1);
         String pairsOfPros = trim2.trim();
-        pairsOfPros = pairsOfPros.substring(0,StringUtils.indexOf(pairsOfPros,"\n"));
+        pairsOfPros = pairsOfPros.substring(0,StringUtils.indexOf(pairsOfPros,"\n")==-1?0:StringUtils.indexOf(pairsOfPros,"\n"));
         String trim3 = trim2.substring(StringUtils.indexOf(trim2,":")+1);
         String Coverage_trim = trim3.trim();
         Coverage[0] =pairsOfModels;
