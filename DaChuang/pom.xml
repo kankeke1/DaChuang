@@ -38,11 +38,8 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
+<!--
+-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -59,7 +56,31 @@
 			<version>1.0</version> <!-- 你可以使用任何有效的版本号 -->
 			<scope>system</scope>
 			<systemPath>${project.basedir}/src/main/resources/lib/splar.jar</systemPath>
+
 		</dependency>
+
+		<dependency>
+			<groupId>tesns</groupId> <!-- 你可以使用任何有效的 groupId -->
+			<artifactId>tesns</artifactId>
+			<version>1.0</version> <!-- 你可以使用任何有效的版本号 -->
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/lib/tesns.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.sat4j</groupId> <!-- 你可以使用任何有效的 groupId -->
+			<artifactId>org.sat4j.core_2_0_5</artifactId>
+			<version>1.0</version> <!-- 你可以使用任何有效的版本号 -->
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/lib/org.sat4j.core_2_0_5.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.sat4j</groupId> <!-- 你可以使用任何有效的 groupId -->
+			<artifactId>org.sat4j.core_trunk</artifactId>
+			<version>1.0</version> <!-- 你可以使用任何有效的版本号 -->
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/lib/org.sat4j.core_trunk.jar</systemPath>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -69,7 +90,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
-			<version>6.0.8</version>
+			<version>5.3.9</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -82,6 +103,23 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+						<manifestEntries>
+							<mode>development</mode>
+							<url>http://sample.com</url>
+							<key>value</key>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
@@ -91,6 +129,7 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<includeSystemScope>true</includeSystemScope>
 				</configuration>
 			</plugin>
 			<plugin>

@@ -46,7 +46,7 @@ public class generateServiceImpl implements generateService{
     File folder = new File(Path);
 //    System.out.println("canwrite?:"+(folder.canWrite()?"yes":"no"));
     if (!folder.exists()) {
-        boolean created = folder.mkdir();
+        boolean created = folder.mkdirs();
         if (created) {
             System.out.println("文件夹创建成功！");
         } else {
@@ -133,7 +133,7 @@ public class generateServiceImpl implements generateService{
     File folder = new File(Path);
     System.out.println("canwrite?:"+(folder.canWrite()?"yes":"no"));
     if (!folder.exists()) {
-        boolean created = folder.mkdir();
+        boolean created = folder.mkdirs();
         if (created) {
             System.out.println("文件夹创建成功！");
         } else {

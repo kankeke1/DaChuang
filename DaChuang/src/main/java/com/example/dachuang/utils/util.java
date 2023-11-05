@@ -1,9 +1,7 @@
 package com.example.dachuang.utils;
 
-import lombok.extern.log4j.Log4j;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
