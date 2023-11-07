@@ -120,7 +120,7 @@ public class generateServiceImpl implements generateService{
 
 @Override
     public String loadFeatureModelXy(MultipartFile file) throws Exception{
-    System.out.println("进入loadFeatureModel");
+    System.out.println("进入loadFeatureModelXy");
     // 获取当前时间
     LocalDateTime currentTime = LocalDateTime.now();
     // 定义日期时间格式
@@ -155,7 +155,7 @@ public class generateServiceImpl implements generateService{
     }
 
 @Override
-    public String useXy0(int type,int Prodsnum,int tstrength,String path ,String pathLastName) throws Exception {
+    public String useXy0(int type,int Prodsnum,int tstrength,String path ,String pathLastName,int time) throws Exception {
 
     Path temppath = Paths.get(path);
     String fileName = temppath.getFileName().toString();
@@ -170,7 +170,7 @@ public class generateServiceImpl implements generateService{
         isDimacs=false;
     }
     //生成产品
-    SPL.generateXy(isDimacs,type,Prodsnum,tstrength,parentPathStr,fileName);
+    SPL.generateXy(isDimacs,type,Prodsnum,tstrength,parentPathStr,fileName,time);
     System.out.println("产品生成完成");
 
     //产品压缩
@@ -185,15 +185,10 @@ public class generateServiceImpl implements generateService{
         e.printStackTrace();
     }
 
-    if(type==0){
-        String productPath = parentPathStr + "/SampleResults/" + fileName +"/" + Prodsnum + "prods/"+Random()+"Products.0";
+        String productPath = parentPathStr + "/Samples/"  + Prodsnum + "prods/"+time+"ms/" +"Products.0";
         System.out.println("返回的产品路径："+productPath);
         return productPath;
-    }
-    else{
-        //type=1时的情况
-        return "";
-    }
+
 
     }
 

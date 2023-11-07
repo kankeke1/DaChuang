@@ -124,23 +124,25 @@ public class generateController {
     @RequestMapping("/generateModelXy")
     @ResponseBody
     public String[] generateProductXy(@RequestParam("file") MultipartFile file,
-                                               @RequestParam("type")int type, @RequestParam("num") int num,
+                                               @RequestParam("type")int type, @RequestParam("time") int time ,@RequestParam("num") int num,
                                                @RequestParam("n-wise")int tstrength) throws Exception {
-        //保存文件路径
-    String path=generateService.loadFeatureModelXy(file);
+        type=3;tstrength=2;//这里先默认使用ns
 
+        //保存文件路径
+        String path=generateService.loadFeatureModelXy(file);
         Path path1 = Paths.get(path);
         // 获取文件的上级目录
         Path parentDirectory = path1.getParent();
         // 获取上级目录的名称
         String lastFolder = parentDirectory.getFileName().toString();
 
-
-    String res=generateService.useXy0(0,30,3,path,lastFolder);
+    String res=generateService.useXy0(type,num,tstrength,path,lastFolder,time);
     String strres= util.GetGenerateResult(res);
-    String[] arr=new String[2];
+    String[] arr=new String[4];
     arr[0]=strres;
-    arr[1]=lastFolder;
+    arr[1]=util.getCoverrageRate(path,tstrength,num,time);
+    arr[2]=util.getRuntime(path,tstrength,num,time);
+    arr[3]=lastFolder;
 
     return arr;
 
