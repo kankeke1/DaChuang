@@ -139,10 +139,10 @@ public class generateController {
     String res=generateService.useXy0(type,num,tstrength,path,lastFolder,time);
     String strres= util.GetGenerateResult(res);
     String[] arr=new String[4];
-    arr[0]=strres;
-    arr[1]=util.getCoverrageRate(path,tstrength,num,time);
-    arr[2]=util.getRuntime(path,tstrength,num,time);
-    arr[3]=lastFolder;
+    arr[0]=strres;//返回产品（全是数字的）
+    arr[1]=util.getCoverrageRate(path,tstrength,num,time);//返回覆盖率（形如99.987）
+    arr[2]=util.getRuntime(path,tstrength,num,time);//返回运行时间单位为毫秒（形如50000）
+    arr[3]=lastFolder;//一个字符串，用来调用downloadfile接口
 
     return arr;
 
