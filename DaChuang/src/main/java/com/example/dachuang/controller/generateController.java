@@ -126,6 +126,7 @@ public class generateController {
     public String[] generateProductXy(@RequestParam("file") MultipartFile file,
                                                @RequestParam("type")int type, @RequestParam("time") int time ,@RequestParam("num") int num,
                                                @RequestParam("n-wise")int tstrength) throws Exception {
+        System.out.println("进入ns算法");
         type=3;tstrength=2;//这里先默认使用ns
 
         //保存文件路径
@@ -137,7 +138,7 @@ public class generateController {
         String lastFolder = parentDirectory.getFileName().toString();
 
     String res=generateService.useXy0(type,num,tstrength,path,lastFolder,time);
-    String strres= util.GetGenerateResult(res);
+    String strres= util.GetGenerateResultXy(res);
     String[] arr=new String[4];
     arr[0]=strres;//返回产品（全是数字的）
     arr[1]=util.getCoverrageRate(path,tstrength,num,time);//返回覆盖率（形如99.987）

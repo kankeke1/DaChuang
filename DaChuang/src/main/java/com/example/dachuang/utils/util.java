@@ -37,6 +37,26 @@ public class util {
         return res;
     }
 
+    public static String GetGenerateResultXy(String filepath){
+        BufferedReader br ;
+        String res="";
+        try {
+            br = new BufferedReader(new FileReader(filepath));
+            String line;
+            while((line = br.readLine())!=null){
+                res+=line;
+                res+=';';
+                res+="\n";
+            }
+            //res = res.substring(0, res.length() - 1)+'\n';
+        } catch (IOException e) {
+            e.printStackTrace();
+            log(e.getMessage(),e);
+        }
+        log("read res succeed");
+        return res;
+    }
+
     public static String getCoverrageRate(String path,int Nwise,int productnum,int time){
 
         Path temppath = Paths.get(path);

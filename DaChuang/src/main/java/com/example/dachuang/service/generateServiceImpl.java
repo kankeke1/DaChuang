@@ -1,6 +1,7 @@
 package com.example.dachuang.service;
 
 import com.example.dachuang.core.ModelPLEDGE;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import spl.SPL;
@@ -24,6 +25,7 @@ import java.util.zip.ZipOutputStream;
  * @description
  */
 @Component
+@Scope("prototype")
 public class generateServiceImpl implements generateService{
 
     ModelPLEDGE model;

@@ -24,15 +24,25 @@ public class filecleanupServiceImpl implements filecleanupService{
         if (folders != null) {
             long currentTime = System.currentTimeMillis();
             for (File folder : folders) {
+                long lastModifiedTime = folder.lastModified();
                 if (folder.isDirectory()) {
-                    long lastModifiedTime = folder.lastModified();
                     if (currentTime - lastModifiedTime > FILE_EXPIRATION_TIME) {
                         deleteFolder(folder); // 删除过期文件夹
                         System.out.println("删除过期文件夹");
                     }
                 }
+                else{
+                    if (currentTime - lastModifiedTime > FILE_EXPIRATION_TIME) {
+                        folder.delete(); // 删除过期文件
+                        System.out.println("删除过期文件: " + folder.getName());
+                    }
+                }
+
+
             }
         }
+
+
     }
 
     private void deleteFolder(File folder) throws IOException {

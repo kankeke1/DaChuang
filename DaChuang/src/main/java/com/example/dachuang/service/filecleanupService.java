@@ -18,7 +18,6 @@ public interface filecleanupService {
     //设置文件过期时间
     static final long FILE_EXPIRATION_TIME = 10 * 60 * 1000 ; // 一天的毫秒数24 * 60 * 60 * 1000
 
-
     public void cleanupExpiredFiles() throws IOException;
 
 }
