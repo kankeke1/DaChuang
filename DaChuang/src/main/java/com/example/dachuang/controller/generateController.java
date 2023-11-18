@@ -66,16 +66,13 @@ public class generateController {
         ModelPLEDGE mod= generateService.downLoadProduct();
 
 //        //覆盖率
-        String[] Coverage=new String[1];
-        Coverage[0] = "#";
-
-        getCoverage(Coverage,mod);
-//        System.out.println("覆盖率在这里"+Coverage[0]);
-//        System.out.println(StringUtils.indexOf(Coverage[0], ":") + 1);
-
-        String[] ret = getCoverageRet(Coverage[0]);
-        return new String[]{util.GetGenerateResult(res),ret[0],ret[1],ret[2]};
+//        String[] Coverage=new String[1];
+//        Coverage[0] = "#";
+//        getCoverage(Coverage,mod);
+//        String[] ret = getCoverageRet(Coverage[0]);
+//        return new String[]{util.GetGenerateResult(res),ret[0],ret[1],ret[2]};
         //1.产品（有模型有数字）  4.覆盖率（生成失败返回#）
+        return new String[]{util.GetGenerateResult(res),"","","#"};
     }
     private String[] getCoverageRet(String cov){
         String[] Coverage=new String[3];
