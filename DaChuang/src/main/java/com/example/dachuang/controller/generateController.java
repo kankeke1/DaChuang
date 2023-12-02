@@ -20,9 +20,6 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.concurrent.TimeoutException;
-
-import static com.sun.activation.registries.LogSupport.log;
 
 /**
  * @Author WHJ
@@ -60,7 +57,7 @@ public class generateController {
            res = generateService.generateProduct(type);
         } catch (Exception e) {
             e.printStackTrace();
-            log(e.getMessage(),e);
+           // log(e.getMessage(),e);
         }
         System.out.println("generate Product Succeed");
         ModelPLEDGE mod= generateService.downLoadProduct();

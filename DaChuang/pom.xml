@@ -40,15 +40,30 @@
 		</dependency>
 <!--
 -->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-test</artifactId>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.amqp</groupId>-->
+<!--			<artifactId>spring-rabbit-test</artifactId>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
+
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<groupId>JCommander</groupId> <!-- 你可以使用任何有效的 groupId -->
+			<artifactId>JCommander</artifactId>
+			<version>1.0</version> <!-- 你可以使用任何有效的版本号 -->
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/lib/JCommander.jar</systemPath>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.amqp</groupId>
-			<artifactId>spring-rabbit-test</artifactId>
-			<scope>test</scope>
+			<groupId>commons-math3-3.0</groupId> <!-- 你可以使用任何有效的 groupId -->
+			<artifactId>commons-math3-3.0</artifactId>
+			<version>1.0</version> <!-- 你可以使用任何有效的版本号 -->
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/lib/commons-math3-3.0.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>splar</groupId> <!-- 你可以使用任何有效的 groupId -->
@@ -56,9 +71,7 @@
 			<version>1.0</version> <!-- 你可以使用任何有效的版本号 -->
 			<scope>system</scope>
 			<systemPath>${project.basedir}/src/main/resources/lib/splar.jar</systemPath>
-
 		</dependency>
-
 		<dependency>
 			<groupId>tesns</groupId> <!-- 你可以使用任何有效的 groupId -->
 			<artifactId>tesns</artifactId>
@@ -102,23 +115,23 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.2.0</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-						</manifest>
-						<manifestEntries>
-							<mode>development</mode>
-							<url>http://sample.com</url>
-							<key>value</key>
-						</manifestEntries>
-					</archive>
-				</configuration>
-			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-jar-plugin</artifactId>-->
+<!--				<version>3.2.0</version>-->
+<!--				<configuration>-->
+<!--					<archive>-->
+<!--						<manifest>-->
+<!--							<addClasspath>true</addClasspath>-->
+<!--						</manifest>-->
+<!--						<manifestEntries>-->
+<!--							<mode>development</mode>-->
+<!--							<url>http://sample.com</url>-->
+<!--							<key>value</key>-->
+<!--						</manifestEntries>-->
+<!--					</archive>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -129,17 +142,18 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<fork>true</fork>
 					<includeSystemScope>true</includeSystemScope>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-compiler-plugin</artifactId>-->
+<!--				<configuration>-->
+<!--					<source>1.8</source>-->
+<!--					<target>1.8</target>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 		</plugins>
 	</build>
 
